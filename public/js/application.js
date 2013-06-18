@@ -1,7 +1,18 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+function refreshTweets(){
+  $.ajax({
+    url: '/updated',
+    data: "username=" + window.location.pathname.replace('/','')
+  }).done(function(response){
+    $('#waiting').hide();
+    $('body').html(response);
+  });
+  $('#waiting').show();
+}
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+$(document).ready(function() {
+  if($('#tweets').data('stale')){
+    refreshTweets();
+  }
+  $(document).on("click", '#refresh', refreshTweets);
+
 });

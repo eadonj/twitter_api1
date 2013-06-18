@@ -37,8 +37,8 @@ require APP_ROOT.join('config', 'database')
 #setup twitter API connection
 
 Twitter.configure do |config|
-  config.consumer_key = ENV['CONSUMER_KEY']
-  config.consumer_secret = ENV['CONSUMER_SECRET']
-  config.oauth_token = ENV['OATH_TOKEN']
-  config.oauth_token_secret = ENV['OATH_TOKEN_SECRET']
+  config.consumer_key = 'J1oDRzoy2clWxww21nkgJQ'
+  config.consumer_secret = '2UpD5cRAdNcBr2aF1rGHKy0s6qmMwfC3lQtYEnmtxAE'
+  config.oauth_token = '513756235-kzlUB8ObYPdH2MLRqPXtJ1w9PTpD2M7Rl3R0I6Dp'
+  config.oauth_token_secret = 'AvZXgtBTd2C3304gwdfMNuzNvqsYczVRqHwEpTCgD0'
 end

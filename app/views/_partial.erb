@@ -1,0 +1,7 @@
+<div id="tweets" data-stale=<%=@stale%> data-hello="sup" data-bye="later">
+  <% if @tweets %>
+    <% @tweets.each do |tweet| %>
+      <%= tweet.body %><br>
+    <% end %>
+  <% end %>
+</div>

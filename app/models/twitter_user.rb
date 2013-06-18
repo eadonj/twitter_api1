@@ -2,6 +2,7 @@ class TwitterUser < ActiveRecord::Base
   has_many :tweets
   
   def tweets_stale?
+    return true if self.tweets.empty?
     time = Time.now - self.tweets.last.updated_at
     (time / 60) > 15
   end    
